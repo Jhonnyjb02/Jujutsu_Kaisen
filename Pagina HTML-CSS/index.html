@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="imagenes\Site-favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jujutsu Kaisen</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+    <section>
+        <div class="login-box">
+            <form id="login-form">
+                <h2>Login</h2>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" class="form-control text-center mt-3 mb-2 pb-3" id="username" name="username"
+                        required>
+                    <label for="text">Usuario</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" class="form-control text-center mt-3 mb-2 pb-3" id="password" name="password"
+                        required>
+                    <label for="password">Contraseña</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Recuerdame</label>
+                    <a href="#">Olvidaste tu Contraseña?</a>
+                </div>
+                <button type="submit">Iniciar sesion</button>
+                <div class="register-link">
+                    <p>No tienes una cuenta?<a href="#">Registrate</a></p>
+                </div>
+
+                <div id="error-message" class="error" style="display: none;" >
+                    <p>Usuario o contraseña incorrectos</p>
+                </div>
+            </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+        <!-- JavaScript personalizado -->
+        <script>
+            $(document).ready(function () {
+                $("#login-form").submit(function (event) {
+                    event.preventDefault();
+                    // Obtener los valores de usuario y contraseña
+                    var username = $("#username").val();
+                    var password = $("#password").val();
+
+                    // Validar el usuario y la contraseña
+                    if (username == "JHONNY" && password == "123456") {
+                        // Si los datos son correctos, redireccionar a la página principal
+                        window.location.href = "inicio.html";
+                    } else {
+                        // Si los datos son incorrectos, mostrar un mensaje de error
+                        $("#error-message").show();
+                    }
+                });
+            });
+        </script>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
